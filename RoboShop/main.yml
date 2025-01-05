@@ -1,0 +1,6 @@
+---
+- name: run the playbooks
+  become: true
+  hosts: "{{component}}"
+  roles:
+  - "{{component}}"
