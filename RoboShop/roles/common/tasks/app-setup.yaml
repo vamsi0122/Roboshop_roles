@@ -6,21 +6,21 @@
   ignore_errors: true
 
 - debug: 
-    msg: "{{ User_validate}}""
+    msg: "{{ User_validate}}"
 
-# - name: Add user if it doest exists
-#   ansible.builtin.user:
-#     name: roboshop
-#     state: present
-#   #when: User_validate.found is not defined
+- name: Add user if it doest exists
+  ansible.builtin.user:
+    name: roboshop
+    state: present
+  when: User_validate.found is not defined
 
-# - name: Check the directory exists.
-#   ansible.builtin.stat:
-#     path: /app
-#   register: directory
+- name: Check the directory exists.
+  ansible.builtin.stat:
+    path: /app
+  register: directory
 
-# # - name: create folder
-# #   ansible.builtin.file:
-# #     path: /app
-# #     state: directory
-# #  # when: directory.stat.exists == False
+- name: create folder
+  ansible.builtin.file:
+    path: /app
+    state: directory
+  when: directory.stat.exists == False
