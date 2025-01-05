@@ -1,6 +1,6 @@
 ---
 - name: run the playbooks
   become: true
-  hosts: {{component}}
+  hosts: "{{component}}""
   roles:
   - "{{component}}"
