@@ -4,11 +4,11 @@
 
 #####var######
 NAME=$@
-ImageId=ami-0b4f379183e5706b9
-SecurityGroupId=sg-0d41613ba45142319
-DomainName=bomma.store
-InstanceType=""
-HostedZoneId=Z029188032MG5FWK5IWMU
+IMAGE_ID=ami-0b4f379183e5706b9
+SECURITY_GROUP_ID=sg-0d41613ba45142319
+DOMAIN_NAME=bomma.store
+INSTANCE_TYPE=""
+HOSTED_ZONE_ID=Z029188032MG5FWK5IWMU
 
 ########
 for i in $@
