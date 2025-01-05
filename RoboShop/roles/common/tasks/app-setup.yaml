@@ -12,7 +12,7 @@
   ansible.builtin.user:
     name: roboshop
     state: present
-  when: User_validate.found is not defined
+  #when: User_validate.found is not defined
 
 - name: Check the directory exists.
   ansible.builtin.stat:
@@ -23,4 +23,4 @@
   ansible.builtin.file:
     path: /app
     state: directory
-  when: directory.stat.exists == False
+ # when: directory.stat.exists == False
