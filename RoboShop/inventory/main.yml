@@ -1,29 +1,29 @@
 [mongodb]
-mongodb.joindevops.online
+mongodb.bomma.store
 
 [catalogue]
-catalogue.joindevops.online
+catalogue.bomma.store
 
 [web]
-web.joindevops.online
+web.bomma.store
 
 [redis]
-redis.joindevops.online
+redis.bomma.store
 
 [user]
-user.joindevops.online
+user.bomma.store
 
 [cart]
-cart.joindevops.online
+cart.bomma.store
 
 [mysql]
-mysql.joindevops.online
+mysql.bomma.store
 
 [shipping]
-shipping.joindevops.online
+shipping.bomma.store
 
 [rabbitmq]
-rabbitmq.joindevops.online
+rabbitmq.bomma.store
 
 [payment]
-payment.joindevops.online
+payment.bomma.store
