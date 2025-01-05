@@ -1,0 +1,7 @@
+- name: Enable repos from the vendor script
+  ansible.builtin.shell:
+    cmd: "curl -sL https://rpm.nodesource.com/setup_lts.x | bash"
+- name: Install nodejs
+  ansible.builtin.yum:
+    name: nodejs
+    state: latest

@@ -1,0 +1,26 @@
+- name: check if the user is exists
+  ansible.builtin.getent:
+    database: passwd
+    key: roboshop
+  register: User_validate
+  ignore_errors: true
+
+- debug: 
+    msg: "{{ User_validate}}""
+
+- name: Add user if it does't exists
+  ansible.builtin.user:
+    name: roboshop
+    state: present
+  when: User_validate.found is not 
+
+- name: Check the directory exists.
+  ansible.builtin.stat:
+    path: /app
+  register: folder_validate
+
+- name: create folder
+  ansible.builtin.file:
+    path: /app
+    state: directory
+  when: folder_validate.stat.exists == False
