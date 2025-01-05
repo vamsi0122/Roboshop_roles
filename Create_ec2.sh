@@ -20,7 +20,7 @@ do
       InstanceType="t2.micro"
     fi
     echo "creating $i instance"
-    Ip_Address=$('aws run-instances --image-id $ImageId --instance-type $InstanceType --security-group-ids $SecurityGroupId'--tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress')
+    Ip_Address=$(aws run-instances --image-id $ImageId --instance-type $InstanceType --security-group-ids $SecurityGroupId --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress')
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch '
     {
             "Changes": [{
