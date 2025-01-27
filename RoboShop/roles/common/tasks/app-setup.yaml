@@ -24,3 +24,17 @@
     path: /app
     state: directory
   when: directory.stat.exists == False
+
+- name: get the file from url
+  ansible.builtin.get_url:
+    url: curl -o /tmp/{{component}}.zip https://roboshop-builds.s3.amazonaws.com/{{component}}.zip
+    dest: /app/{{component}}
+
+- name: Unarchive a file that is already on the remote machine
+  ansible.builtin.unarchive:
+    src: "/tmp/{{component}}.zip"
+    dest: /app
+    remote_src: yes
+  
+ 
+
